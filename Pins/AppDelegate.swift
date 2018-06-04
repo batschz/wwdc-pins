@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PinService().availablePins { pins in
             print (pins)
         }
+        ConversationService().conversationWith(user: "franz") { conversation in
+            print (conversation)
+        }
         return true
     }
 
