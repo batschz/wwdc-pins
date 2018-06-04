@@ -19,6 +19,7 @@ class SignUpViewController: UIViewController {
 
         UserService().save(username: name) { success in
             if success {
+                UserDefaults().set(true, forKey: "isSignedUp")
                 (UIApplication.shared.delegate as? AppDelegate)?.showTradesViewController()
             }
         }

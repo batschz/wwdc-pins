@@ -122,7 +122,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="250" id="T3o-wq-2zH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="250" id="T3o-wq-2zH" customClass="TradesTableViewCell" customModule="Pins" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T3o-wq-2zH" id="B75-5J-x5k">
@@ -138,6 +138,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw7-DC-mZ4">
                                                     <rect key="frame" x="297" y="25.5" width="62" height="30"/>
                                                     <state key="normal" title="Message"/>
+                                                    <connections>
+                                                        <action selector="messageButtonTapped" destination="T3o-wq-2zH" eventType="touchUpInside" id="Yb6-Md-yu7"/>
+                                                    </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sS6-B0-AcQ">
                                                     <rect key="frame" x="16" y="69.5" width="343" height="172"/>
@@ -211,8 +214,17 @@
                                                 <constraint firstAttribute="trailing" secondItem="sS6-B0-AcQ" secondAttribute="trailing" constant="16" id="uxn-U1-z4n"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="HdX-eC-LaQ" id="I8h-C1-fIk"/>
+                                            <outlet property="offersStackView" destination="Mx2-jd-jLA" id="2tT-bO-yU4"/>
+                                            <outlet property="wantsStackView" destination="Qef-6e-I23" id="uaJ-qM-6V2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9Nf-or-DZi" id="Z3B-N6-Qd9"/>
+                                    <outlet property="delegate" destination="9Nf-or-DZi" id="woA-fR-mSc"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -226,6 +238,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Trades" id="tM1-KT-EMu"/>
                     <connections>
+                        <outlet property="tableView" destination="mwL-MP-2Th" id="gew-XT-Kxg"/>
                         <segue destination="lMw-pF-wQL" kind="show" identifier="ProfileViewController" id="15s-ST-GlU"/>
                         <segue destination="X9o-w7-cF0" kind="show" identifier="ChatsViewController" id="SHF-hs-kC8"/>
                     </connections>

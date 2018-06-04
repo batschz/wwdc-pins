@@ -33,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         }
         showChatTest()
+
+        if UserDefaults().bool(forKey: "isSignedUp") {
+            showTradesViewController()
+        }
         return true
     }
 
