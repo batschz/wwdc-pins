@@ -17,7 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        UserService.signin()
+        UserService().signin()
+        UserService().stream { users in
+            print (users)
+        }
         return true
     }
 
