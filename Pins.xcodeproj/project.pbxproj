@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		25D8059B20C4D71000B4D25D /* TradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D8059A20C4D71000B4D25D /* TradesViewController.swift */; };
 		25D8059F20C4E77700B4D25D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D8059E20C4E77700B4D25D /* SignUpViewController.swift */; };
+		36589D8420C5DD9A009DC178 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36589D8320C5DD9A009DC178 /* ConversationViewController.swift */; };
+		36589D8620C5DDA6009DC178 /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36589D8520C5DDA6009DC178 /* Conversation.storyboard */; };
 		3662DCDA20C4BFB0004379F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3662DCD920C4BFB0004379F2 /* AppDelegate.swift */; };
 		3662DCDF20C4BFB0004379F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3662DCDD20C4BFB0004379F2 /* Main.storyboard */; };
 		3662DCE120C4BFB5004379F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3662DCE020C4BFB5004379F2 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		167C7963E152EAF738453911 /* Pods_Pins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D8059A20C4D71000B4D25D /* TradesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesViewController.swift; sourceTree = "<group>"; };
 		25D8059E20C4E77700B4D25D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		36589D8320C5DD9A009DC178 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		36589D8520C5DDA6009DC178 /* Conversation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Conversation.storyboard; sourceTree = "<group>"; };
 		3662DCD620C4BFB0004379F2 /* Pins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3662DCD920C4BFB0004379F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3662DCDE20C4BFB0004379F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 			children = (
 				25D8059A20C4D71000B4D25D /* TradesViewController.swift */,
 				25D8059E20C4E77700B4D25D /* SignUpViewController.swift */,
+				36589D8320C5DD9A009DC178 /* ConversationViewController.swift */,
+				36589D8520C5DDA6009DC178 /* Conversation.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 			files = (
 				3662DCE420C4BFB5004379F2 /* LaunchScreen.storyboard in Resources */,
 				3662DCE120C4BFB5004379F2 /* Assets.xcassets in Resources */,
+				36589D8620C5DDA6009DC178 /* Conversation.storyboard in Resources */,
 				3662DCDF20C4BFB0004379F2 /* Main.storyboard in Resources */,
 				3662DD1220C4D566004379F2 /* GoogleService-Info.plist in Resources */,
 			);
@@ -376,6 +383,7 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Swible/Swible.framework",
@@ -391,6 +399,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swible.framework",
@@ -458,6 +467,7 @@
 				3662DCDA20C4BFB0004379F2 /* AppDelegate.swift in Sources */,
 				3662DD1A20C4F133004379F2 /* Message.swift in Sources */,
 				3662DD1420C4E4A0004379F2 /* PinService.swift in Sources */,
+				36589D8420C5DD9A009DC178 /* ConversationViewController.swift in Sources */,
 				3662DD0920C4D408004379F2 /* UserService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

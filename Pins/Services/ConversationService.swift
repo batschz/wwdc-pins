@@ -51,6 +51,7 @@ class ConversationService {
         db.collection("conversations").document(conversation.conversationId).collection("messages").order(by: "createdAt").addSnapshotListener { (snapshot, error) in
             
             guard let snapshot = snapshot else {
+                completion([])
                 return
             }
             var messages: [Message] = []
@@ -70,7 +71,7 @@ class ConversationService {
             return
         }
         let document = db.collection("conversations").document(conversation.conversationId).collection("messages").document()
-        document.setData(["sender": me.uid, "content": message, "createdAt": FieldValue.serverTimestamp()]) { error in
+        document.setData(["sentBy": me.uid, "content": message, "createdAt": FieldValue.serverTimestamp()]) { error in
             completion(error == nil)
         }
         

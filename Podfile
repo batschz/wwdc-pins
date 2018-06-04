@@ -14,6 +14,7 @@ target 'Pins' do
 
   pod 'Swible'
   pod 'SnapKit'
+  pod 'MessageKit'
 
   target 'PinsTests' do
     inherit! :search_paths

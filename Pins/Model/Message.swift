@@ -9,7 +9,8 @@
 import FirebaseFirestore
 
 struct Message {
-    let sender: String
+    let uid: String
+    let sentBy: String
     let content: String
     let createdAt: Date
     
@@ -19,14 +20,16 @@ struct Message {
             return nil
         }
 
-        guard let sender = data["sender"] as? String,
-            let createdAt = data["createdAt"] as? Timestamp,
+        print (data)
+        guard let sentBy = data["sentBy"] as? String,
+            let createdAt = data["createdAt"] as? Date,
             let content = data["content"] as? String else {
                 return nil
         }
         
-        self.sender = sender
-        self.createdAt = createdAt.dateValue()
+        self.uid = snapshot.documentID
+        self.sentBy = sentBy
+        self.createdAt = createdAt
         self.content = content
     }
 }

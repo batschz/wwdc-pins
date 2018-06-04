@@ -32,11 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print (messages)
             })
         }
+        showChatTest()
         return true
     }
 
     func showTradesViewController() {
-        window?.rootViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "TradesNavigationController")
+        //window?.rootViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "TradesNavigationController")
+    }
+    
+    func showChatTest() {
+        window?.rootViewController = UIStoryboard(name: "Conversation", bundle: .main).instantiateViewController(withIdentifier: "ConversationViewController")
     }
 
 

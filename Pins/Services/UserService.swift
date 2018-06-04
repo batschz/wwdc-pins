@@ -15,6 +15,13 @@ class UserService {
         Auth.auth().signInAnonymously(completion: nil)
     }
     
+    var me: String? {
+        guard let user = Auth.auth().currentUser else {
+            return nil
+        }
+        return user.uid
+    }
+    
     func save(username: String, completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         guard let user = Auth.auth().currentUser else {

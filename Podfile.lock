@@ -75,6 +75,7 @@ PODS:
     - gRPC-RxLibrary (= 1.12.0)
   - GTMSessionFetcher/Core (1.1.15)
   - leveldb-library (1.20)
+  - MessageKit (0.13.5)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -90,6 +91,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - Firebase/Messaging
+  - MessageKit
   - SnapKit
   - Swible
 
@@ -110,6 +112,7 @@ SPEC REPOS:
     - gRPC-RxLibrary
     - GTMSessionFetcher
     - leveldb-library
+    - MessageKit
     - nanopb
     - Protobuf
     - SnapKit
@@ -131,11 +134,12 @@ SPEC CHECKSUMS:
   gRPC-RxLibrary: 1ed5314e8b38cd6e55c9bfa048387136ae925ce9
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MessageKit: c4bd50e285a0f0761bc23a2e982aa7840873c4f5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   Swible: 2fe23298e839ba3935d4e99e47c25d59ac873414
 
-PODFILE CHECKSUM: 1c54a5fdcdd5212d440c8221889b211529eba2f4
+PODFILE CHECKSUM: 646e79e9e16cd824bcee1a4072e941e53dbf1db0
 
 COCOAPODS: 1.5.3
