@@ -19,7 +19,7 @@ struct User {
             return nil
         }
         guard let username = data["username"] as? String,
-            let updateAt = data["updatedAt"] as? Date,
+            let updateAt = data["updatedAt"] as? Timestamp,
             let offers = data["offers"] as? [String: Bool],
             let wants = data["wants"] as? [String: Bool] else {
                 return nil
@@ -38,7 +38,7 @@ struct User {
         }
  
         self.username = username
-        self.updateAt = updateAt
+        self.updateAt = updateAt.dateValue()
     }
     
 }

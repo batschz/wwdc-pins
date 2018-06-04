@@ -19,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         UserService().signin()
         UserService().stream { users in
-            print (users)
+            //print (users)
+        }
+        PinService().availablePins { pins in
+            print (pins)
         }
         return true
     }
