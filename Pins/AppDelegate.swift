@@ -25,7 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print (pins)
         }
         ConversationService().conversationWith(user: "franz") { conversation in
-            print (conversation)
+            guard let conversation = conversation else {
+                return
+            }
+            ConversationService().messagesOf(conversation: conversation, completion: { messages in
+                print (messages)
+            })
         }
         return true
     }
