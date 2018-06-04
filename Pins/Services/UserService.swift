@@ -20,8 +20,8 @@ class UserService {
         guard let user = Auth.auth().currentUser else {
             return
         }
-    
-        db.document(user.uid).setData(["username": username], merge: true) { error in
+        
+        db.collection("users").document(user.uid).setData(["username": username], merge: true) { error in
             completion(error)
         }
         
