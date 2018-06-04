@@ -25,4 +25,9 @@ struct Conversation {
         self.conversationId = snapshot.documentID
     }
     
+    init(conversationId: String, sender: String, receiver: String) {
+        self.conversationId = conversationId
+        participants = [sender, receiver]
+    }
+    
 }

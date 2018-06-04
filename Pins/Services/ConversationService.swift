@@ -14,6 +14,7 @@ class ConversationService {
     func conversationWith(user: String, completion: @escaping (Conversation?) -> ()) {
         let db = Firestore.firestore()
         guard let me = Auth.auth().currentUser else {
+            completion(nil)
             return
         }
         db.collection("conversations")
@@ -25,6 +26,23 @@ class ConversationService {
                 }
                 let conversation = Conversation(snapshot: document)
                 completion(conversation)
+        }
+    }
+    
+    func startConversationWith(user: String, completion: @escaping (Conversation?) -> ()) {
+        let db = Firestore.firestore()
+        guard let me = Auth.auth().currentUser else {
+            completion(nil)
+            return
+        }
+        let document = db.collection("conversations").document()
+        document.setData(["participants": [user: true, me.uid: true]]) { error in
+            guard error == nil else {
+                completion(nil)
+                return
+            }
+            let conversation = Conversation(conversationId: document.documentID, sender: me.uid, receiver: user)
+            completion(conversation)
         }
     }
     
@@ -45,9 +63,17 @@ class ConversationService {
         }
     }
     
-    func send(message: String, inConversation conversation: String, completion: @escaping (Bool) -> ()) {
+    func send(message: String, inConversation conversation: Conversation, completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
-        //db.collection("conversations").document("conversation").
+        guard let me = Auth.auth().currentUser else {
+            completion(false)
+            return
+        }
+        let document = db.collection("conversations").document(conversation.conversationId).collection("messages").document()
+        document.setData(["sender": me.uid, "content": message, "createdAt": FieldValue.serverTimestamp()]) { error in
+            completion(error == nil)
+        }
+        
     }
     
 }

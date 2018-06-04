@@ -15,14 +15,15 @@ class UserService {
         Auth.auth().signInAnonymously(completion: nil)
     }
     
-    func save(username: String, completion: @escaping (Error?) -> ()) {
+    func save(username: String, completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         guard let user = Auth.auth().currentUser else {
+            completion(false)
             return
         }
         
         db.collection("users").document(user.uid).setData(["username": username], merge: true) { error in
-            completion(error)
+            completion(error == nil)
         }
         
     }
@@ -45,13 +46,15 @@ class UserService {
         
     }
     
-    func save(wants: [String: Bool], needs: [String: Bool]) {
+    func save(wants: [String: Bool], needs: [String: Bool], completion: @escaping (Bool) -> ()) {
         
         let db = Firestore.firestore()
         guard let user = Auth.auth().currentUser else {
             return
         }
-        db.document(user.uid).setData(["wants": wants, "needs": needs, "updatedAt": FieldValue.serverTimestamp()], merge: true)
+        db.document(user.uid).setData(["wants": wants, "needs": needs, "updatedAt": FieldValue.serverTimestamp()], merge: true) { error in
+            completion(error == nil)
+        }
     }
     
 }
