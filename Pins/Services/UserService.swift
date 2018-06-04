@@ -15,12 +15,16 @@ class UserService {
         Auth.auth().signInAnonymously(completion: nil)
     }
     
-    func save(username: String) {
+    func save(username: String, completion: @escaping (Error?) -> ()) {
         let db = Firestore.firestore()
         guard let user = Auth.auth().currentUser else {
             return
         }
-        db.document(user.uid).setData(["username": username], merge: true)
+    
+        db.document(user.uid).setData(["username": username], merge: true) { error in
+            completion(error)
+        }
+        
     }
     
     func stream(completion: @escaping ([User]) -> ()) {
