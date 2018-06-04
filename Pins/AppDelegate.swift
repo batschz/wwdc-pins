@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ConversationService().conversationWith(user: "franz") { conversation in
             print (conversation)
         }
+
+        if UserDefaults().bool(forKey: "isSignedUp") {
+            showTradesViewController()
+        }
         return true
     }
 

@@ -21,6 +21,7 @@ class SignUpViewController: UIViewController {
             if let error = error {
 
             } else {
+                UserDefaults().set(true, forKey: "isSignedUp")
                 (UIApplication.shared.delegate as? AppDelegate)?.showTradesViewController()
             }
         }
