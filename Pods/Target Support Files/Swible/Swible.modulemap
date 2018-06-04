@@ -1,0 +1,6 @@
+framework module Swible {
+  umbrella header "Swible-umbrella.h"
+
+  export *
+  module * { export * }
+}
