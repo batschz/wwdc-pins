@@ -32,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print (messages)
             })
         }
-        showChatTest()
 
         if UserDefaults().bool(forKey: "isSignedUp") {
             showTradesViewController()
@@ -41,13 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func showTradesViewController() {
-        //window?.rootViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "TradesNavigationController")
+        window?.rootViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "TradesNavigationController")
     }
-    
-    func showChatTest() {
-        window?.rootViewController = UIStoryboard(name: "Conversation", bundle: .main).instantiateViewController(withIdentifier: "ConversationViewController")
-    }
-
 
 }
 

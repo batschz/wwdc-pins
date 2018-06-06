@@ -10,8 +10,15 @@ import FirebaseFirestore
 
 class PinService {
     
+    let db = Firestore.firestore()
+    
+    init() {
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+    }
+    
     func availablePins(completion: @escaping ([Pin]) -> ()) {
-        let db = Firestore.firestore()
         db.collection("pins").addSnapshotListener { (snapshot, error) in
             guard let snapshot = snapshot else {
                 return

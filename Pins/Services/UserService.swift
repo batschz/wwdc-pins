@@ -11,6 +11,14 @@ import FirebaseFirestore
 
 class UserService {
     
+    let db = Firestore.firestore()
+    
+    init() {
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+    }
+    
     func signin() {
         Auth.auth().signInAnonymously(completion: nil)
     }
@@ -23,7 +31,6 @@ class UserService {
     }
     
     func save(username: String, completion: @escaping (Bool) -> ()) {
-        let db = Firestore.firestore()
         guard let user = Auth.auth().currentUser else {
             completion(false)
             return
@@ -37,7 +44,6 @@ class UserService {
     
     func stream(completion: @escaping ([User]) -> ()) {
         
-        let db = Firestore.firestore()
         db.collection("users").order(by: "updatedAt").addSnapshotListener { (snapshot, error) in
             guard let snapshot = snapshot else {
                 return
@@ -55,7 +61,6 @@ class UserService {
     
     func save(wants: [String: Bool], needs: [String: Bool], completion: @escaping (Bool) -> ()) {
         
-        let db = Firestore.firestore()
         guard let user = Auth.auth().currentUser else {
             return
         }

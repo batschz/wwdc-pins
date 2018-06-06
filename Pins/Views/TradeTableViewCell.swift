@@ -8,12 +8,24 @@
 
 import UIKit
 
+protocol TradesTableViewCellDelegate: NSObjectProtocol {
+    func didTapMessage(cell: TradesTableViewCell)
+}
+
 class TradesTableViewCell: UITableViewCell {
 
 
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var offersStackView: UIStackView!
     @IBOutlet private var wantsStackView: UIStackView!
+    
+    weak var delegate: TradesTableViewCellDelegate?
+    
+    var user: User? {
+        didSet {
+            name = user?.username
+        }
+    }
 
     var name: String? {
         didSet {
@@ -34,7 +46,7 @@ class TradesTableViewCell: UITableViewCell {
     }
 
     @IBAction private func messageButtonTapped(_ sender: UIButton) {
-
+        delegate?.didTapMessage(cell: self)
     }
 
     private func insert(_ images: [UIImage], into stackView: UIStackView) {

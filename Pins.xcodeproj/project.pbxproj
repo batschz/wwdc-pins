@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		25D8059B20C4D71000B4D25D /* TradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D8059A20C4D71000B4D25D /* TradesViewController.swift */; };
 		25D8059F20C4E77700B4D25D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D8059E20C4E77700B4D25D /* SignUpViewController.swift */; };
-		36589D8420C5DD9A009DC178 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36589D8320C5DD9A009DC178 /* ConversationViewController.swift */; };
-		36589D8620C5DDA6009DC178 /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36589D8520C5DDA6009DC178 /* Conversation.storyboard */; };
 		25D805A220C5DA8E00B4D25D /* TradeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D805A120C5DA8E00B4D25D /* TradeTableViewCell.swift */; };
+		36589D8420C5DD9A009DC178 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36589D8320C5DD9A009DC178 /* ConversationViewController.swift */; };
 		3662DCDA20C4BFB0004379F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3662DCD920C4BFB0004379F2 /* AppDelegate.swift */; };
 		3662DCDF20C4BFB0004379F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3662DCDD20C4BFB0004379F2 /* Main.storyboard */; };
 		3662DCE120C4BFB5004379F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3662DCE020C4BFB5004379F2 /* Assets.xcassets */; };
@@ -26,6 +25,8 @@
 		3662DD1420C4E4A0004379F2 /* PinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3662DD1320C4E4A0004379F2 /* PinService.swift */; };
 		3662DD1620C4E620004379F2 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3662DD1520C4E620004379F2 /* Pin.swift */; };
 		3662DD1A20C4F133004379F2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3662DD1920C4F133004379F2 /* Message.swift */; };
+		36ABB7E320C74C0900D8DFDA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ABB7E220C74C0900D8DFDA /* ProfileViewController.swift */; };
+		36ABB7E520C74CF500D8DFDA /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ABB7E420C74CF500D8DFDA /* ProfileCollectionViewCell.swift */; };
 		A46EC9399308B17DFB30D95D /* Pods_Pins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 167C7963E152EAF738453911 /* Pods_Pins.framework */; };
 		AEF16987CD3A13627C658803 /* Pods_PinsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E2B0530653C7C59AFCCCDE /* Pods_PinsUITests.framework */; };
 		C6F292F0811226ACA6EE5CB2 /* Pods_PinsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB8E1C9AB70A5ED36F8FE6C /* Pods_PinsTests.framework */; };
@@ -53,9 +54,8 @@
 		167C7963E152EAF738453911 /* Pods_Pins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D8059A20C4D71000B4D25D /* TradesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesViewController.swift; sourceTree = "<group>"; };
 		25D8059E20C4E77700B4D25D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		36589D8320C5DD9A009DC178 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
-		36589D8520C5DDA6009DC178 /* Conversation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Conversation.storyboard; sourceTree = "<group>"; };
 		25D805A120C5DA8E00B4D25D /* TradeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeTableViewCell.swift; sourceTree = "<group>"; };
+		36589D8320C5DD9A009DC178 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		3662DCD620C4BFB0004379F2 /* Pins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3662DCD920C4BFB0004379F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3662DCDE20C4BFB0004379F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +77,8 @@
 		3662DD1520C4E620004379F2 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		3662DD1920C4F133004379F2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		367205FBBAB6732588AAE1EE /* Pods-PinsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PinsTests/Pods-PinsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		36ABB7E220C74C0900D8DFDA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		36ABB7E420C74CF500D8DFDA /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		36E2B0530653C7C59AFCCCDE /* Pods_PinsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B7F627133C98B726AF4816 /* Pods-Pins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pins.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pins/Pods-Pins.debug.xcconfig"; sourceTree = "<group>"; };
 		9BB8E1C9AB70A5ED36F8FE6C /* Pods_PinsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,7 +144,7 @@
 				25D8059A20C4D71000B4D25D /* TradesViewController.swift */,
 				25D8059E20C4E77700B4D25D /* SignUpViewController.swift */,
 				36589D8320C5DD9A009DC178 /* ConversationViewController.swift */,
-				36589D8520C5DDA6009DC178 /* Conversation.storyboard */,
+				36ABB7E220C74C0900D8DFDA /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				25D805A120C5DA8E00B4D25D /* TradeTableViewCell.swift */,
+				36ABB7E420C74CF500D8DFDA /* ProfileCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -343,7 +346,6 @@
 			files = (
 				3662DCE420C4BFB5004379F2 /* LaunchScreen.storyboard in Resources */,
 				3662DCE120C4BFB5004379F2 /* Assets.xcassets in Resources */,
-				36589D8620C5DDA6009DC178 /* Conversation.storyboard in Resources */,
 				3662DCDF20C4BFB0004379F2 /* Main.storyboard in Resources */,
 				3662DD1220C4D566004379F2 /* GoogleService-Info.plist in Resources */,
 			);
@@ -472,10 +474,12 @@
 				3662DD0C20C4D4AD004379F2 /* User.swift in Sources */,
 				25D8059B20C4D71000B4D25D /* TradesViewController.swift in Sources */,
 				25D805A220C5DA8E00B4D25D /* TradeTableViewCell.swift in Sources */,
+				36ABB7E320C74C0900D8DFDA /* ProfileViewController.swift in Sources */,
 				25D8059F20C4E77700B4D25D /* SignUpViewController.swift in Sources */,
 				3662DD1020C4D4C3004379F2 /* ConversationService.swift in Sources */,
 				3662DD1620C4E620004379F2 /* Pin.swift in Sources */,
 				3662DD0E20C4D4B8004379F2 /* Conversation.swift in Sources */,
+				36ABB7E520C74CF500D8DFDA /* ProfileCollectionViewCell.swift in Sources */,
 				3662DCDA20C4BFB0004379F2 /* AppDelegate.swift in Sources */,
 				3662DD1A20C4F133004379F2 /* Message.swift in Sources */,
 				3662DD1420C4E4A0004379F2 /* PinService.swift in Sources */,

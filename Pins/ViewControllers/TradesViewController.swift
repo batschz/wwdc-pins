@@ -11,8 +11,18 @@ import UIKit
 class TradesViewController: UIViewController {
 
     @IBOutlet private var tableView: UITableView!
+    
+    let userService = UserService()
+    var users = [User]()
 
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userService.stream { users in
+            self.users = users
+            self.tableView.reloadData()
+        }
+        performSegue(withIdentifier: "ProfileViewController", sender: nil)
+    }
 
 }
 
@@ -24,11 +34,20 @@ extension TradesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return users.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TradesTableViewCell", for: indexPath) as! TradesTableViewCell
+        cell.user = users[indexPath.row]
+        cell.delegate = self
+        return cell
     }
 
+}
+
+extension TradesViewController: TradesTableViewCellDelegate {
+    func didTapMessage(cell: TradesTableViewCell) {
+        performSegue(withIdentifier: "ConversationViewController", sender: nil)
+    }
 }

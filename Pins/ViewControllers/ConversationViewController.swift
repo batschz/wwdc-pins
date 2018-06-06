@@ -13,7 +13,7 @@ class ConversationViewController: MessagesViewController {
     var messages: [Message] = []
     var conversation: Conversation? = nil {
         didSet {
-            guard let conversation = conversation else {
+            guard conversation != nil else {
                 return
             }
             loadMessages()
@@ -41,6 +41,7 @@ class ConversationViewController: MessagesViewController {
         conversationService.messagesOf(conversation: conversation) { messages in
             self.messages = messages
             self.messagesCollectionView.reloadData()
+            self.messagesCollectionView.scrollToBottom(animated: true)
         }
     }
     

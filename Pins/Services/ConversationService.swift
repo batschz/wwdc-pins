@@ -11,8 +11,15 @@ import FirebaseFirestore
 
 class ConversationService {
     
+    let db = Firestore.firestore()
+    
+    init() {
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+    }
+    
     func conversationWith(user: String, completion: @escaping (Conversation?) -> ()) {
-        let db = Firestore.firestore()
         guard let me = Auth.auth().currentUser else {
             completion(nil)
             return
@@ -30,7 +37,6 @@ class ConversationService {
     }
     
     func startConversationWith(user: String, completion: @escaping (Conversation?) -> ()) {
-        let db = Firestore.firestore()
         guard let me = Auth.auth().currentUser else {
             completion(nil)
             return
@@ -47,7 +53,6 @@ class ConversationService {
     }
     
     func messagesOf(conversation: Conversation, completion: @escaping ([Message]) -> ()) {
-        let db = Firestore.firestore()
         db.collection("conversations").document(conversation.conversationId).collection("messages").order(by: "createdAt").addSnapshotListener { (snapshot, error) in
             
             guard let snapshot = snapshot else {
@@ -65,7 +70,6 @@ class ConversationService {
     }
     
     func send(message: String, inConversation conversation: Conversation, completion: @escaping (Bool) -> ()) {
-        let db = Firestore.firestore()
         guard let me = Auth.auth().currentUser else {
             completion(false)
             return
